@@ -30,7 +30,7 @@
 
         <!-- domain类的位置 targetProject是相对pom.xml的路径-->
         <javaModelGenerator targetProject="../business/src/main/java"
-                            targetPackage="com.jiawa.nls.business.domain"/>
+                            targetPackage="com.wz.nls.business.domain"/>
 
         <!-- mapper xml的位置 targetProject是相对pom.xml的路径 -->
         <sqlMapGenerator targetProject="../business/src/main/resources"
@@ -38,7 +38,7 @@
 
         <!-- mapper类的位置 targetProject是相对pom.xml的路径 -->
         <javaClientGenerator targetProject="../business/src/main/java"
-                             targetPackage="com.jiawa.nls.business.mapper"
+                             targetPackage="com.wz.nls.business.mapper"
                              type="XMLMAPPER"/>
 
         <!--<table tableName="demo" domainObjectName="Demo"/>-->
