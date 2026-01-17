@@ -1,9 +1,10 @@
 package com.wz.nls.business.service;
 
-import com.wz.nls.business.domain.Demo;
+import cn.hutool.core.bean.BeanUtil;
 import com.wz.nls.business.domain.DemoExample;
 import com.wz.nls.business.mapper.DemoMapper;
 import com.wz.nls.business.req.DemoQueryReq;
+import com.wz.nls.business.resp.DemoQueryResp;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class DemoService {
         return demoMapper.countByExample(null);
     }
 
-    public List<Demo> query(DemoQueryReq req) {
+    public List<DemoQueryResp> query(DemoQueryReq req) {
         String mobile = req.getMobile();
         DemoExample example = new DemoExample();
         example.setOrderByClause("id desc");
@@ -26,6 +27,6 @@ public class DemoService {
         if (mobile != null) {
             criteria.andMobileNameEqualTo(mobile);
         }
-        return demoMapper.selectByExample(example);
+        return BeanUtil.copyToList(demoMapper.selectByExample(example),  DemoQueryResp.class);
     }
 }

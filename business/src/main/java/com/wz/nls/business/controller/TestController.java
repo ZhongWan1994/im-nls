@@ -1,7 +1,8 @@
 package com.wz.nls.business.controller;
 
-import com.wz.nls.business.domain.Demo;
 import com.wz.nls.business.req.DemoQueryReq;
+import com.wz.nls.business.resp.CommonResp;
+import com.wz.nls.business.resp.DemoQueryResp;
 import com.wz.nls.business.service.DemoService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,18 +15,13 @@ public class TestController {
     @Resource
     private DemoService demoService;
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "hello world!";
-    }
-
     @GetMapping("/count")
-    public long count() {
-        return demoService.count();
+    public CommonResp<Long> count() {
+        return new CommonResp<>(demoService.count());
     }
 
     @GetMapping("/query")
-    public List<Demo> query(DemoQueryReq req) {
-        return demoService.query(req);
+    public CommonResp<List<DemoQueryResp>> query(DemoQueryReq req) {
+        return new CommonResp<>(demoService.query(req));
     }
 }
