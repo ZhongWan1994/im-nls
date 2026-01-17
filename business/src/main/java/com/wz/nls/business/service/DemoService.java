@@ -3,6 +3,7 @@ package com.wz.nls.business.service;
 import com.wz.nls.business.domain.Demo;
 import com.wz.nls.business.domain.DemoExample;
 import com.wz.nls.business.mapper.DemoMapper;
+import com.wz.nls.business.req.DemoQueryReq;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,8 @@ public class DemoService {
         return demoMapper.countByExample(null);
     }
 
-    public List<Demo> query(String mobile) {
+    public List<Demo> query(DemoQueryReq req) {
+        String mobile = req.getMobile();
         DemoExample example = new DemoExample();
         example.setOrderByClause("id desc");
         DemoExample.Criteria criteria = example.createCriteria();

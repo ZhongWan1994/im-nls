@@ -1,6 +1,7 @@
 package com.wz.nls.business.controller;
 
 import com.wz.nls.business.domain.Demo;
+import com.wz.nls.business.req.DemoQueryReq;
 import com.wz.nls.business.service.DemoService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ public class TestController {
     }
 
     @GetMapping("/query")
-    public List<Demo> query(String mobile) {
-        return demoService.query(mobile);
+    public List<Demo> query(DemoQueryReq req) {
+        return demoService.query(req);
     }
 }
