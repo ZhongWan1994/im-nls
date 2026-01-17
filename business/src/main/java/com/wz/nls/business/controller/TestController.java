@@ -16,7 +16,7 @@ public class TestController {
     }
 
     @GetMapping("/count")
-    public int count() {
+    public long count() {
         return demoService.count();
     }
 }
