@@ -25,7 +25,9 @@ import TheHeader from "../components/the-header.vue"
 import TheSider from "../components/the-sider.vue"
 import axios from "axios"
 axios.get("http://localhost:18000/nls/query", {
-  "mobile": "Huawei"
+  params: {
+    "mobile": "Huawei"
+  }
 }).then((response)=>{
   console.log(response)
 })
