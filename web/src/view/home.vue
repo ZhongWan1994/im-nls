@@ -21,10 +21,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import TheHeader from "../components/the-header.vue";
 import TheSider from "../components/the-sider.vue";
-
 </script>
 
 <style scoped>
