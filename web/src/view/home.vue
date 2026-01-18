@@ -21,8 +21,14 @@
 </template>
 
 <script setup>
-import TheHeader from "../components/the-header.vue";
-import TheSider from "../components/the-sider.vue";
+import TheHeader from "../components/the-header.vue"
+import TheSider from "../components/the-sider.vue"
+import axios from "axios"
+axios.get("http://localhost:18000/nls/query", {
+  "mobile": "Huawei"
+}).then((response)=>{
+  console.log(response)
+})
 </script>
 
 <style scoped>
