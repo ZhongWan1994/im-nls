@@ -34,7 +34,7 @@ const onchange = () => {
   console.log("手工赋值，内容:", resp.value)
 }
 
-axios.get("http://localhost:18000/nls/query", {
+axios.get("/nls/query", {
   params: {
     "mobile": "Huawei"
   }

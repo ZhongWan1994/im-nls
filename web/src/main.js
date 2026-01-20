@@ -29,3 +29,6 @@ axios.interceptors.response.use(function (response) {
     console.log("返回错误", error)
     return Promise.reject(error)
 })
+
+console.log("服务端：", import.meta.env.VITE_SERVER)
+axios.defaults.baseURL = import.meta.env.VITE_SERVER
