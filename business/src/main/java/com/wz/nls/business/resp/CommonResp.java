@@ -17,8 +17,8 @@ public class CommonResp<T> {
     /**
      * 返回泛型数据
      */
-    private T cotent;
-    public CommonResp(T cotent) {
-        this.cotent = cotent;
+    private T content;
+    public CommonResp(T content) {
+        this.content = content;
     }
 }
